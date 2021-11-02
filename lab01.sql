@@ -7,7 +7,7 @@ CREATE TABLE emp (
   sal decimal(7,2) default NULL,
   comm decimal(7,2) default NULL,
   deptno decimal(2,0) default NULL,
-  primary key (empno),
+  primary key (empno)
 );
 
 DROP TABLE IF EXISTS dept;
