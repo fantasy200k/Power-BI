@@ -61,3 +61,26 @@ ALTER TABLE emp ADD FOREIGN KEY (deptno) REFERENCES dept(deptno);
 ALTER TABLE emp ADD CONSTRAINT FK_Deptno FOREIGN KEY (deptno) REFERENCES dept(deptno);
 
 ALTER TABLE emp DROP FOREIGN KEY FK_Deptno;
+
+
+CREATE TABLE Projects (
+ ProjectId INT PRIMARY KEY AUTO_INCREMENT,
+      Title VARCHAR(200) NOT NULL,
+     ClientId INT,
+ EmployeeId INT,
+     StartDate DATETIME,
+     EndDate DATETIME
+);
+
+INSERT INTO Projects ( Title, ClientId, EmployeeId, StartDate, EndDate) VALUES 
+('Develop ecommerse website from scratch', 1, 7782, NOW(), DATE_ADD(NOW(), INTERVAL 30 DAY)),
+('WordPress website for our company', 1, 7934, NOW(), DATE_ADD(NOW(), INTERVAL 45 DAY)),
+('Manage our company servers', 2, 1007, NOW(), DATE_ADD(NOW(), INTERVAL 45 DAY)),
+('Hosting account is not working', 3, 1009, NOW(), DATE_ADD(NOW(), INTERVAL 7 DAY)),
+('MySQL database from my desktop application', 4, 1010, NOW(), DATE_ADD(NOW(), INTERVAL 15 DAY)),
+('Develop new WordPress plugin for my business website', 2, NULL, NOW(), DATE_ADD(NOW(), INTERVAL 10 DAY)),
+('Migrate web application and database to new server', 2, NULL, NOW(), DATE_ADD(NOW(), INTERVAL 5 DAY)),
+('Android Application development', 4, 1004, NOW(), DATE_ADD(NOW(), INTERVAL 30 DAY));
+
+
+
