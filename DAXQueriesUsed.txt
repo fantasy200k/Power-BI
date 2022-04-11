@@ -1,0 +1,52 @@
+EVALUATE
+(
+    SUMMARIZE (
+        'FactSales',
+        'FactSales'[LocationKey],
+        "Total Sales", sum('FactSales'[Sales Amount])
+    )
+)
+
+
+
+EVALUATE
+(
+    SUMMARIZE (
+        'FactSales',
+        ROLLUP('FactSales'[LocationKey]),
+        "Total Sales", sum('FactSales'[Sales Amount])
+    )
+)
+
+
+
+EVALUATE
+(
+    SUMMARIZE (
+        'FactSales',
+        ROLLUP('FactSales'[LocationKey], 'FactSales'[Productid]),
+        "Rows count", count('FactSales'[OrderNo])
+    )
+)
+
+
+EVALUATE
+(
+    SUMMARIZE (
+        'FactSales',
+        ROLLUP('FactSales'[LocationKey], 'FactSales'[Productid]),
+        "Rows count", count('FactSales'[OrderNo]),
+        "Location sub total " , ISSUBTOTAL( FactSales[Productid])
+    )
+)
+
+EVALUATE
+(
+    SUMMARIZECOLUMNS (
+        'FactSales'[LocationKey],
+        "Sales by Location ", SUMX ( factsales, FactSales[List Price] * factsales[Quantity] )
+    )
+)
+
+
+
