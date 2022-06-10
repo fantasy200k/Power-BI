@@ -1,0 +1,10 @@
+Customers Name,Units Sold,Sales,Active,dob
+Barron,10,10232,TRUE,02-05-1992
+Larry,15,4812,FALSE,03-08-1990
+Barron,12,8482,,05-06-1988
+TRUE,,null,TRUE,null
+22,10,8411,TRUE,05-16-1988
+Barron,,null,,25-05-1988
+Raich,6,12,,10-08-1994
+Chris,0,null,,11-09-1995
+,,,,11-11-1980
